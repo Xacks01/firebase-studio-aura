@@ -1,4 +1,6 @@
+
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { products } from '@/lib/data';
@@ -11,7 +13,8 @@ function ProductCard({ product }: { product: Product }) {
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full">
           <Image
-            src={product.thumbnail}
+            // Use a smaller placeholder for the card view if desired, or keep consistent
+            src={product.thumbnail.replace('600x400', '300x200')} 
             alt={product.title}
             data-ai-hint={product.dataAiHint || "product image"}
             layout="fill"
@@ -20,13 +23,19 @@ function ProductCard({ product }: { product: Product }) {
         </div>
       </CardHeader>
       <CardContent className="p-6 flex-grow">
-        <CardTitle className="text-xl font-semibold mb-2 text-foreground">{product.title}</CardTitle>
+        <CardTitle className="text-xl font-semibold mb-2 text-foreground hover:text-primary">
+          <Link href={`/products/${product.id}`}>
+            {product.title}
+          </Link>
+        </CardTitle>
         <p className="text-sm text-muted-foreground mb-1">{product.availability}</p>
         <p className="text-lg font-bold text-primary">{product.price}</p>
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button className="w-full shadow-md">
-          <ShoppingBag className="mr-2 h-4 w-4" /> Buy Now
+        <Button asChild className="w-full shadow-md">
+          <Link href={`/products/${product.id}`}>
+            <ShoppingBag className="mr-2 h-4 w-4" /> Buy Now
+          </Link>
         </Button>
       </CardFooter>
     </Card>

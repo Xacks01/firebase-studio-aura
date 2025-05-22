@@ -1,3 +1,4 @@
+
 export type NavItem = {
   label: string;
   href: string;
@@ -10,6 +11,7 @@ export type Product = {
   title: string;
   availability: string;
   price: string;
+  description: string; // Added description field
 };
 
 export type FAQ = {

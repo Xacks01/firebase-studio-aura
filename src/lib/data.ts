@@ -1,29 +1,36 @@
+
 import type { Product, FAQ, Testimonial } from '@/types';
 
 export const products: Product[] = [
   {
     id: '1',
-    thumbnail: 'https://placehold.co/300x200.png',
-    dataAiHint: 'wellness product',
+    thumbnail: 'https://placehold.co/600x400.png', // Larger placeholder for detail page
+    dataAiHint: 'wellness diffuser',
     title: 'Aura Bloom Diffuser',
     availability: 'In Stock',
     price: '$49.99',
+    description:
+      'Elevate your space with the Aura Bloom Diffuser. Its elegant design and ultrasonic technology gently disperse your favorite essential oils, creating a serene and aromatic ambiance. Features multiple mist settings and a soft LED light for a complete sensory experience. Perfect for living rooms, bedrooms, or offices.',
   },
   {
     id: '2',
-    thumbnail: 'https://placehold.co/300x200.png',
-    dataAiHint: 'natural soap',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'lavender soap',
     title: 'Serene Lavender Soap',
     availability: 'In Stock',
     price: '$12.50',
+    description:
+      'Indulge in the calming embrace of our Serene Lavender Soap. Handcrafted with natural ingredients and pure lavender essential oil, this soap gently cleanses while soothing your skin and senses. Ideal for a relaxing bath or shower, leaving your skin soft, moisturized, and delicately scented.',
   },
   {
     id: '3',
-    thumbnail: 'https://placehold.co/300x200.png',
-    dataAiHint: 'organic tea',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'chamomile tea',
     title: 'Calming Chamomile Tea',
     availability: 'Limited Stock',
     price: '$18.00',
+    description:
+      'Unwind with our Calming Chamomile Tea, a soothing blend of organic chamomile flowers. Naturally caffeine-free, this tea is perfect for relaxing evenings or any time you need a moment of peace. Enjoy its delicate floral notes and gentle calming properties. Each pack contains 20 biodegradable tea bags.',
   },
 ];
 
@@ -83,3 +90,8 @@ export const testimonials: Testimonial[] = [
     role: 'Busy Professional',
   },
 ];
+
+// Helper function to get product by ID
+export const getProductById = (id: string): Product | undefined => {
+  return products.find((product) => product.id === id);
+};
