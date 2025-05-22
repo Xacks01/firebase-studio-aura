@@ -1,19 +1,20 @@
+
 'use client';
 
 import Link from 'next/link';
-import { Leaf, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { NAV_LINKS } from '@/lib/constants';
 import type { NavItem } from '@/types';
+
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2" aria-label="Aura Landing Home">
-          <Leaf className="h-7 w-7 text-primary" />
-          <span className="font-bold text-xl text-foreground">Aura</span>
+            <img src="/assets/images/aura-logo.svg" alt="Aura Logo" className="h-7" />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
