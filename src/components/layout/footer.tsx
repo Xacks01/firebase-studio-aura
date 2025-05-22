@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Github, Twitter, Instagram, Leaf } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,14 +30,14 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-3">Connect With Us</h3>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-6 w-6" />
+              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
+                <img src="/assets/images/face.svg" alt="Facebook icon" className="h-6 w-6" />
               </Link>
               <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary">
-                <Instagram className="h-6 w-6" />
+                <img src="/assets/images/ig.svg" alt="Instagram icon" className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="GitHub" className="text-muted-foreground hover:text-primary">
-                <Github className="h-6 w-6" />
+              <Link href="#" aria-label="TikTok" className="text-muted-foreground hover:text-primary">
+                <img src="/assets/images/tik.svg" alt="TikTok icon" className="h-6 w-6" />
               </Link>
             </div>
           </div>
