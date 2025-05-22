@@ -32,7 +32,7 @@ export default function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 py-12 md:py-16 bg-[#F5DAD2]">
       <Button variant="outline" asChild className="mb-8 group">
         <Link href="/#products">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
