@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { products } from '@/lib/data';
 import type { Product } from '@/types';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, ArrowRight } from 'lucide-react';
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -43,6 +43,8 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
+  const featuredProducts = products.slice(0, 4);
+
   return (
     <section id="products" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -52,14 +54,23 @@ export default function ProductSection() {
         <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
           Handpicked selections to enhance your journey towards balance and well-being.
         </p>
-        {products.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
+        {featuredProducts.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
           <p className="text-center text-muted-foreground">No products available at the moment.</p>
+        )}
+        {products.length > 4 && (
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline" className="shadow-sm">
+              <Link href="/shop">
+                View All Products <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         )}
       </div>
     </section>

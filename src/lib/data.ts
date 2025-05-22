@@ -32,6 +32,96 @@ export const products: Product[] = [
     description:
       'Unwind with our Calming Chamomile Tea, a soothing blend of organic chamomile flowers. Naturally caffeine-free, this tea is perfect for relaxing evenings or any time you need a moment of peace. Enjoy its delicate floral notes and gentle calming properties. Each pack contains 20 biodegradable tea bags.',
   },
+  {
+    id: '4',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'meditation cushion',
+    title: 'Zenith Meditation Cushion',
+    availability: 'In Stock',
+    price: '$35.00',
+    description:
+      'Find your center with our Zenith Meditation Cushion. Ergonomically designed for comfort and support during your meditation practice. Filled with natural buckwheat hulls and covered in a soft, durable cotton fabric. Features a convenient carry handle.',
+  },
+  {
+    id: '5',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'essential oil set',
+    title: 'Essential Oils Starter Set',
+    availability: 'In Stock',
+    price: '$29.99',
+    description:
+      'Begin your aromatherapy journey with our Essential Oils Starter Set. Includes three 10ml bottles of our most popular oils: Lavender, Peppermint, and Eucalyptus. 100% pure and therapeutic grade, perfect for diffusing or topical use when diluted.',
+  },
+  {
+    id: '6',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'yoga mat',
+    title: 'Eco-Friendly Yoga Mat',
+    availability: 'In Stock',
+    price: '$55.00',
+    description:
+      'Practice sustainably with our Eco-Friendly Yoga Mat. Made from natural tree rubber and PU for superior grip and cushioning. Non-toxic, biodegradable, and designed for all types of yoga and fitness routines. Includes a carrying strap.',
+  },
+  {
+    id: '7',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'bath bomb set',
+    title: 'Relaxing Bath Bomb Set',
+    availability: 'Limited Stock',
+    price: '$22.50',
+    description:
+      'Transform your bath into a spa-like experience with our Relaxing Bath Bomb Set. Includes four handcrafted bath bombs in soothing scents like Rose, Lavender, Chamomile, and Sandalwood. Made with natural ingredients and essential oils.',
+  },
+  {
+    id: '8',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'sleep mask',
+    title: 'Silk Sleep Mask',
+    availability: 'In Stock',
+    price: '$19.99',
+    description:
+      'Enjoy blissful, uninterrupted sleep with our luxurious Silk Sleep Mask. Made from 100% pure mulberry silk, it\'s incredibly soft and gentle on your skin. Effectively blocks out light to help you achieve deeper, more restful sleep.',
+  },
+  {
+    id: '9',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'incense sticks',
+    title: 'Natural Incense Sticks',
+    availability: 'In Stock',
+    price: '$15.00',
+    description:
+      'Create a tranquil atmosphere with our Natural Incense Sticks. Hand-dipped and made from high-quality botanicals and resins. Available in a variety of calming scents like Sandalwood, Frankincense, and Nag Champa. Each pack contains 30 sticks.',
+  },
+  {
+    id: '10',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'herbal supplement',
+    title: 'Adaptogen Herbal Blend',
+    availability: 'In Stock',
+    price: '$28.00',
+    description:
+      'Support your body\'s natural ability to cope with stress with our Adaptogen Herbal Blend. A carefully selected mix of powerful adaptogenic herbs like Ashwagandha, Rhodiola, and Holy Basil. Mix into smoothies, tea, or water.',
+  },
+  {
+    id: '11',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'wellness journal',
+    title: 'Mindfulness Journal',
+    availability: 'In Stock',
+    price: '$24.00',
+    description:
+      'Cultivate self-awareness and gratitude with our Mindfulness Journal. Features guided prompts, daily reflections, and space for free-form writing. A beautiful tool to support your mental well-being journey.',
+  },
+  {
+    id: '12',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'spa gift set',
+    title: 'Luxury Spa Gift Set',
+    availability: 'Limited Stock',
+    price: '$75.00',
+    description:
+      'Indulge yourself or a loved one with our Luxury Spa Gift Set. Includes a selection of our finest bath and body products, such as a mini diffuser, bath salts, body lotion, and a scented candle. Beautifully packaged and ready for gifting.',
+  },
 ];
 
 export const faqs: FAQ[] = [
@@ -148,6 +238,12 @@ export const getProductById = (id: string): Product | undefined => {
   return products.find((product) => product.id === id);
 };
 
+// Helper function to get all products
+export const getAllProducts = (): Product[] => {
+  return products;
+};
+
+
 // Helper functions for blog posts
 export const getAllBlogPosts = (): BlogPost[] => {
   return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by most recent
@@ -156,3 +252,4 @@ export const getAllBlogPosts = (): BlogPost[] => {
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find((post) => post.slug === slug);
 };
+
