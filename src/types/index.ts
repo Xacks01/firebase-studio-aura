@@ -28,3 +28,20 @@ export type Testimonial = {
   author: string;
   role: string;
 };
+
+export type BlogPost = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  authorAvatar?: string;
+  authorAvatarHint?: string;
+  date: string; // Keep as string for simplicity, can be Date object if needed
+  views: number;
+  likes: number;
+  imageUrl: string;
+  imageAiHint: string;
+  tags?: string[];
+};

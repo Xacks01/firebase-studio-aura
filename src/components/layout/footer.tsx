@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Github, Twitter, Instagram, Leaf } from 'lucide-react';
 
@@ -22,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="#hero" className="text-muted-foreground hover:text-primary text-sm">Home</Link></li>
               <li><Link href="#products" className="text-muted-foreground hover:text-primary text-sm">Products</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary text-sm">Blog</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-primary text-sm">Blog</Link></li>
               <li><Link href="#faq" className="text-muted-foreground hover:text-primary text-sm">FAQs</Link></li>
             </ul>
           </div>

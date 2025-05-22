@@ -1,3 +1,4 @@
+
 import type { NavItem } from '@/types';
 
 export const NAV_LINKS: NavItem[] = [
@@ -5,5 +6,5 @@ export const NAV_LINKS: NavItem[] = [
   { label: 'Products', href: '#products' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'FAQs', href: '#faq' },
-  { label: 'Blog', href: '#' }, // Placeholder for blog link
+  { label: 'Blog', href: '/blog' },
 ];
