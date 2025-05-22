@@ -1,5 +1,6 @@
+
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/layout/navbar';
@@ -15,6 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const dmSerifDisplay = DM_Serif_Display({
+  variable: '--font-dm-serif-display',
+  weight: ['400'], // DM Serif Display typically comes in 400 weight
+  subsets: ['latin'],
+});
+
 export const metadata: Metadata = {
   title: 'Aura Landing',
   description: 'Experience calm and wellness with Aura.',
@@ -27,9 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${dmSerifDisplay.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow px-4">
+        <main className="flex-grow px-4 pt-5">
           {children}
         </main>
         <Footer />

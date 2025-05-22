@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -12,6 +13,7 @@ export default {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
+        serif: ['var(--font-dm-serif-display)'], // Using the CSS variable for DM Serif Display
       },
       colors: {
         background: 'hsl(var(--background))',
