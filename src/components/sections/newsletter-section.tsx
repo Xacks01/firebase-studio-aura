@@ -5,7 +5,8 @@ export default function NewsletterSection() {
   return (
     // Apply background and vertical padding to the outer section
     // This section's background will now be full-width
-    <section id="newsletter" className="py-16 md:py-24 bg-violet-100 mb-5">
+    // Removed mb-5
+    <section id="newsletter" className="py-16 md:py-24 bg-violet-100">
       {/* Container to constrain the content within the page layout */}
       <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
