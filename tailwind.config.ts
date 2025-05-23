@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-dm-sans)'], // Changed from --font-geist-sans
+        sans: ['var(--font-dm-sans)'],
         mono: ['var(--font-geist-mono)'],
         serif: ['var(--font-dm-serif-display)'],
       },
@@ -96,5 +96,5 @@ export default {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

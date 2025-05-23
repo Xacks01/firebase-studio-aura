@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { BlogPost } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CalendarDays, UserCircle, MessageSquare, Eye } from 'lucide-react'; // Assuming MessageSquare for comments/likes for now
+import { CalendarDays, UserCircle, MessageSquare, Eye } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 type BlogCardProps = {
@@ -61,7 +61,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                     <MessageSquare className="mr-1.5 h-4 w-4" /> {post.likes}
                 </span>
             </div>
-            <Button variant="outline" size="sm" asChild className="shadow-sm">
+            <Button variant="default" size="sm" asChild className="shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">
               <Link href={`/blog/${post.slug}`}>Read More</Link>
             </Button>
         </div>

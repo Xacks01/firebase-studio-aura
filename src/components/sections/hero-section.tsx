@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="bg-primary rounded-[100px] mx-5 py-4 px-[10px] mb-5"
+      className="bg-primary rounded-[100px] mx-5 py-16 px-[10px] mb-5" // Updated py-4 to py-16
     >
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
