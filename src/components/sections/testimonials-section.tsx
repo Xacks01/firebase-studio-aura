@@ -8,7 +8,7 @@ import { Star } from 'lucide-react';
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="bg-background text-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-xl overflow-hidden">
+    <Card className="bg-background text-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] overflow-hidden">
       <CardHeader className="flex flex-row items-center gap-4 p-6">
         <Avatar className="h-16 w-16 border-2 border-border">
           <AvatarImage src={testimonial.avatar} alt={testimonial.author} data-ai-hint={testimonial.dataAiHint || "person avatar"} />
