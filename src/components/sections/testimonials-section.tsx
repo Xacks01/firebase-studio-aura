@@ -9,7 +9,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  // CarouselPrevious and CarouselNext are removed
 } from "@/components/ui/carousel"
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
@@ -65,9 +64,8 @@ export default function TestimonialsSection() {
     setScrollSnaps(emblaApi.scrollSnapList());
     setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect); // Handle re-initialization
+    emblaApi.on('reInit', onSelect); 
 
-    // Clean up
     return () => {
       emblaApi.off('select', onSelect);
       emblaApi.off('reInit', onSelect);
@@ -82,15 +80,16 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Voices of Our Community
-        </h2>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-          Hear what our customers are saying about their Aura experience.
-        </p>
-      </div>
-      <div className="bg-[#BFD7EA] rounded-[100px]">
-        <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Voices of Our Community
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl">
+            Hear what our customers are saying about their Aura experience.
+          </p>
+        </div>
+        
+        <div className="bg-[#BFD7EA] rounded-[100px] py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           {testimonials.length > 0 ? (
             <>
               <Carousel
@@ -99,7 +98,7 @@ export default function TestimonialsSection() {
                   loop: testimonials.length > 2, 
                 }}
                 className="w-full"
-                setApi={setEmblaApi} // Get the API instance
+                setApi={setEmblaApi}
               >
                 <CarouselContent className="-ml-4">
                   {testimonials.map((testimonial) => (
@@ -110,7 +109,6 @@ export default function TestimonialsSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                {/* CarouselPrevious and CarouselNext removed */}
               </Carousel>
               {scrollSnaps.length > 1 && (
                 <div className="flex justify-center gap-2 mt-6">
