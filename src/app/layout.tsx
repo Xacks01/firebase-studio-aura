@@ -36,7 +36,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} ${dmSerifDisplay.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow px-4 pt-5">
+        {/* Removed px-4 from main to allow sections to control their full-width backgrounds */}
+        <main className="flex-grow pt-5 flex flex-col gap-8">
           {children}
         </main>
         <Footer />
