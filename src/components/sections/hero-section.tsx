@@ -20,7 +20,7 @@ export default function HeroSection() {
               Elevate your well-being with our thoughtfully curated collection of natural products, designed to bring peace and serenity to your everyday life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button asChild size="lg" className="shadow-sm bg-[#3A3A3A]">
+              <Button asChild size="lg" className="shadow-sm bg-[#3A3A3A] text-white">
                 <Link href="#products">
                   Contact Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
