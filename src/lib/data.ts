@@ -182,6 +182,26 @@ export const testimonials: Testimonial[] = [
     role: 'Wellness Blogger',
     rating: 4,
   },
+  {
+    id: 't4',
+    avatar: 'https://placehold.co/80x80.png',
+    dataAiHint: 'satisfied entrepreneur',
+    text:
+      "The Ultimate Gut Wellness Bundle is incredible value! So many templates, all beautifully designed. My Instagram presence has transformed.",
+    author: 'Emily K.',
+    role: 'Wellness Entrepreneur',
+    rating: 5,
+  },
+  {
+    id: 't5',
+    avatar: 'https://placehold.co/80x80.png',
+    dataAiHint: 'health consultant',
+    text:
+      "I was hesitant about templates, but Aura's designs are so flexible and professional. Customizing them is super easy, even for a Canva beginner like me.",
+    author: 'David B.',
+    role: 'Holistic Health Consultant',
+    rating: 4,
+  }
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -255,3 +275,5 @@ export const getAllBlogPosts = (): BlogPost[] => {
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find((post) => post.slug === slug);
 };
+
+    

@@ -13,7 +13,7 @@ import {
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
 import { Star } from 'lucide-react';
-import { cn } from "@/lib/utils"; // Added import for cn
+import { cn } from "@/lib/utils";
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
@@ -50,7 +50,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="mb-5 px-6">
+    <section id="testimonials" className="mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Voices of Our Community
@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
             <Carousel
               opts={{
                 align: "start",
-                loop: testimonials.length > 2, // Loop if more than 2 testimonials
+                loop: testimonials.length > 2, 
               }}
               className="w-full"
             >
@@ -78,10 +78,10 @@ export default function TestimonialsSection() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              {testimonials.length > 1 && ( // Only show controls if more than 1 testimonial
+              {testimonials.length > 1 && ( 
                 <>
-                  <CarouselPrevious className="hidden sm:flex" />
-                  <CarouselNext className="hidden sm:flex" />
+                  <CarouselPrevious />
+                  <CarouselNext />
                 </>
               )}
             </Carousel>
@@ -93,3 +93,5 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
+    
