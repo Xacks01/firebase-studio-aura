@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { DM_Sans, DM_Serif_Display } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/layout/navbar';
@@ -12,11 +12,7 @@ const dmSans = DM_Sans({
   weight: ['400', '500', '700'], // Include weights you need
 });
 
-const dmSerifDisplay = DM_Serif_Display({
-  variable: '--font-dm-serif-display',
-  subsets: ['latin'],
-  weight: '400', // Specify weights if needed, e.g., ['400', '700']
-});
+// DM_Serif_Display was intentionally removed to use system "New York" font for headers
 
 export const metadata: Metadata = {
   title: 'Aura | Gut Wellness Canva Templates for Instagram',
@@ -30,9 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.variable} ${dmSerifDisplay.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${dmSans.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow pt-5 flex flex-col gap-8">
+        <main className="flex-grow flex flex-col gap-8">
           {children}
         </main>
         <Footer />

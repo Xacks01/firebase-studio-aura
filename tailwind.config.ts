@@ -12,8 +12,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-dm-sans)'],
-        mono: ['var(--font-geist-mono)'],
-        serif: ['New York', 'Times New Roman', 'serif'], // Changed to New York with fallbacks
+        mono: ['var(--font-geist-mono)'], // Retained from previous state, not conflicting
+        serif: ['New York', 'Times New Roman', 'serif'], // Ensure "New York" is the primary serif
       },
       colors: {
         background: 'hsl(var(--background))',
