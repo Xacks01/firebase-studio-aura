@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="bg-[#CDE0D3] rounded-[100px] mx-5 p-16 mb-5"
+      className="bg-[#CDE0D3] rounded-[100px] mx-5 py-16 px-6 mb-5"
     >
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">

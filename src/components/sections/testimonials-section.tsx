@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
@@ -35,7 +35,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 mb-5">
+    <section id="testimonials" className="mb-5 px-6">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Voices of Our Community
@@ -43,15 +43,19 @@ export default function TestimonialsSection() {
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
           Hear what our customers are saying about their Aura experience.
         </p>
-        {testimonials.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-muted-foreground">No testimonials available yet.</p>
-        )}
+      </div>
+      <div className="bg-[#BFD7EA] rounded-[100px]">
+        <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          {testimonials.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-muted-foreground">No testimonials available yet.</p>
+          )}
+        </div>
       </div>
     </section>
   );

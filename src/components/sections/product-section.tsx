@@ -46,7 +46,7 @@ export default function ProductSection() {
   const featuredProducts = products.slice(0, 4);
 
   return (
-    <section id="products" className="py-16 md:py-24 mb-5">
+    <section id="products" className="py-16 md:py-24 px-6 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Our Signature Products
@@ -56,7 +56,7 @@ export default function ProductSection() {
         </p>
       </div>
       <div className="bg-[#F5DAD2] rounded-[100px]">
-        <div className="container mx-auto max-w-screen-xl px-16 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="container mx-auto max-w-screen-xl px-6 sm:px-6 lg:px-8 py-12 md:py-16">
           {featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {featuredProducts.map((product) => (
