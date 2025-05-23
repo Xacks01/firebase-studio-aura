@@ -15,7 +15,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-800 text-slate-300">
+    <footer className="bg-[#3A3A3A] text-slate-300">
       <div className="container mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
         <Separator className="bg-slate-600 mb-8" />
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
