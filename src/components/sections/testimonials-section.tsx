@@ -82,11 +82,8 @@ export default function TestimonialsSection() {
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Voices of Our Community
+            Testimonials
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Hear what our customers are saying about their Aura experience.
-          </p>
         </div>
         
         <div className="bg-[#BFD7EA] rounded-[100px] py-16 md:py-24 px-4 sm:px-6 lg:px-8">

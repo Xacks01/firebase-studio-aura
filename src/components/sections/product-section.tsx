@@ -51,7 +51,7 @@ export default function ProductSection() {
     <section id="products" className="py-16 md:py-24 px-6 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Featured Gut Wellness Templates
+        Templates
         </h2>
       </div>
       <div className="bg-[#F5DAD2] rounded-[100px]">
