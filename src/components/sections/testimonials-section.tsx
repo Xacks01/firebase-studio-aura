@@ -1,14 +1,22 @@
 
+"use client"
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
 import { Star } from 'lucide-react';
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="bg-background text-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] overflow-hidden">
+    <Card className="bg-background text-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] overflow-hidden h-full">
       <CardHeader className="flex flex-row items-center gap-4 p-6">
         <Avatar className="h-16 w-16 border-2 border-border">
           <AvatarImage src={testimonial.avatar} alt={testimonial.author} data-ai-hint={testimonial.dataAiHint || "person avatar"} />
@@ -19,13 +27,19 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           <p className="text-sm text-muted-foreground">{testimonial.role}</p>
         </div>
       </CardHeader>
-      <CardContent className="p-6 flex-grow">
+      <CardContent className="p-6 flex-grow flex flex-col">
         <div className="flex mb-3">
             {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                <Star 
+                  key={i} 
+                  className={cn(
+                    "h-5 w-5",
+                    i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground/50 fill-muted-foreground/20"
+                  )}
+                />
             ))}
         </div>
-        <blockquote className="text-muted-foreground italic leading-relaxed">
+        <blockquote className="text-muted-foreground italic leading-relaxed flex-grow">
           &ldquo;{testimonial.text}&rdquo;
         </blockquote>
       </CardContent>
@@ -47,11 +61,29 @@ export default function TestimonialsSection() {
       <div className="bg-[#BFD7EA] rounded-[100px]">
         <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           {testimonials.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: testimonials.length > 2, // Loop if more than 2 testimonials
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1 h-full">
+                      <TestimonialCard testimonial={testimonial} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {testimonials.length > 1 && ( // Only show controls if more than 1 testimonial
+                <>
+                  <CarouselPrevious className="hidden sm:flex" />
+                  <CarouselNext className="hidden sm:flex" />
+                </>
+              )}
+            </Carousel>
           ) : (
             <p className="text-center text-muted-foreground">No testimonials available yet.</p>
           )}

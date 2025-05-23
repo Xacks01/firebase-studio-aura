@@ -27,6 +27,7 @@ export type Testimonial = {
   text: string;
   author: string;
   role: string;
+  rating: number; // Added rating field
 };
 
 export type BlogPost = {

@@ -7,9 +7,12 @@ import { products } from '@/lib/data';
 import type { Product } from '@/types';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product, cardNumber }: { product: Product; cardNumber: number }) {
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px]">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] relative">
+      <div className="absolute top-2 left-2 bg-primary/80 text-primary-foreground h-8 w-8 flex items-center justify-center rounded-full text-sm font-bold z-10 shadow-md">
+        {cardNumber}
+      </div>
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full">
           <Image
@@ -42,7 +45,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
-  const featuredProducts = products.slice(0, 3); 
+  const featuredProducts = products.slice(0, 4); 
 
   return (
     <section id="products" className="py-16 md:py-24 px-6 mb-5">
@@ -55,8 +58,8 @@ export default function ProductSection() {
         <div className="container mx-auto max-w-screen-xl px-6 sm:px-6 lg:px-8 py-12 md:py-16">
           {featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {featuredProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} cardNumber={index + 1} />
               ))}
             </div>
           ) : (
