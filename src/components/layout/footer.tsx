@@ -6,6 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   // Social icons data
+  // Ensure these SVGs (ig.svg, face.svg, tik.svg, pin.svg) are in public/assets/images/
   const socialLinks = [
     { href: "#", label: "Instagram", iconSrc: "/assets/images/ig.svg" },
     { href: "#", label: "Facebook", iconSrc: "/assets/images/face.svg" },
@@ -14,9 +15,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#3A3A3A] text-slate-300">
+    <footer className="bg-slate-800 text-slate-300">
       <div className="container mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
-        <Separator className="bg-white mb-8" />
+        <Separator className="bg-slate-600 mb-8" />
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-center sm:text-left">
             <p>
