@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -7,15 +8,15 @@ import { Star } from 'lucide-react';
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="bg-accent/50 text-accent-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-xl overflow-hidden">
-      <CardHeader className="flex flex-row items-center gap-4 p-6 bg-accent/70">
-        <Avatar className="h-16 w-16 border-2 border-background">
+    <Card className="bg-background text-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-xl overflow-hidden">
+      <CardHeader className="flex flex-row items-center gap-4 p-6">
+        <Avatar className="h-16 w-16 border-2 border-border">
           <AvatarImage src={testimonial.avatar} alt={testimonial.author} data-ai-hint={testimonial.dataAiHint || "person avatar"} />
           <AvatarFallback>{testimonial.author.substring(0, 2).toUpperCase()}</AvatarFallback>
         </Avatar>
         <div>
-          <h4 className="text-lg font-semibold text-accent-foreground">{testimonial.author}</h4>
-          <p className="text-sm text-accent-foreground/80">{testimonial.role}</p>
+          <h4 className="text-lg font-semibold text-foreground">{testimonial.author}</h4>
+          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
         </div>
       </CardHeader>
       <CardContent className="p-6 flex-grow">
@@ -24,7 +25,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                 <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
             ))}
         </div>
-        <blockquote className="text-accent-foreground/90 italic leading-relaxed">
+        <blockquote className="text-muted-foreground italic leading-relaxed">
           &ldquo;{testimonial.text}&rdquo;
         </blockquote>
       </CardContent>
@@ -34,7 +35,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-background mb-5">
+    <section id="testimonials" className="py-16 md:py-24 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Voices of Our Community
