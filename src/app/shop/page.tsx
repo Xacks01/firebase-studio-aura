@@ -38,7 +38,7 @@ function ShopProductCard({ product }: { product: Product }) {
           </Link>
         </CardTitle>
         <p className="text-sm text-muted-foreground mb-1">{product.availability}</p>
-        <p className="text-lg font-bold text-primary">{product.price}</p>
+        <p className="text-lg font-bold text-[#334038]">{product.price}</p>
       </CardContent>
       <CardFooter className="p-6 pt-0 mt-auto border-t border-border/20">
         <Button asChild className="w-full shadow-md">

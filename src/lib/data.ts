@@ -7,7 +7,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Canva template gut health',
     title: 'Gut Health Basics Instagram Pack',
-    availability: 'Instant Download',
+    availability: '20 Templates', // Updated
     price: '$29.99',
     description:
       'Kickstart your gut wellness content with 20 professionally designed Canva templates. Includes posts on probiotics, fiber, hydration, and mindful eating. Fully editable to match your brand.',
@@ -17,7 +17,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Instagram story template wellness',
     title: 'Digestive Wellness Story Templates',
-    availability: 'Instant Download',
+    availability: '15 Templates', // Updated
     price: '$19.50',
     description:
       'Engage your audience with 15 interactive Instagram Story templates focused on digestive health tips, Q&A, and daily reminders. Easy to customize in Canva with your own content and branding.',
@@ -27,7 +27,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'recipe Canva template',
     title: 'Gut-Friendly Recipe Card Templates',
-    availability: 'Instant Download',
+    availability: '10 Templates', // Updated
     price: '$22.00',
     description:
       'Share your delicious gut-healthy recipes in style! This pack includes 10 beautifully designed Canva templates for Instagram posts, perfect for showcasing ingredients and instructions.',
@@ -37,7 +37,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Canva template infographic',
     title: 'Microbiome Facts Infographic Pack',
-    availability: 'Instant Download',
+    availability: '12 Templates', // Updated
     price: '$25.00',
     description:
       'Educate your followers with 12 eye-catching infographic templates about the microbiome, gut-brain axis, and fermented foods. Simplify complex topics with these customizable Canva designs.',
@@ -47,7 +47,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'wellness challenge template',
     title: '7-Day Gut Reset Challenge Templates',
-    availability: 'Instant Download',
+    availability: '30+ Templates', // Updated
     price: '$39.99',
     description:
       'Launch a 7-day gut reset challenge with this comprehensive Canva template bundle. Includes daily posts, story prompts, and cover images to guide your audience through a wellness journey.',
@@ -57,7 +57,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Canva template bundle',
     title: 'Ultimate Gut Wellness Canva Bundle',
-    availability: 'Instant Download',
+    availability: '100+ Templates', // Updated
     price: '$97.00',
     description:
       'Get all our top gut wellness templates in one bundle! Over 100+ designs including posts, stories, carousels, and infographics. The ultimate toolkit for your Instagram content strategy.',
@@ -67,7 +67,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'mindful eating Canva template',
     title: 'Mindful Eating Tips Carousel Templates',
-    availability: 'Instant Download',
+    availability: '8 Templates', // Updated
     price: '$24.50',
     description:
       'Encourage mindful eating habits with 8 engaging carousel post templates. Each template is designed to share valuable tips and insights in a digestible format. Fully customizable in Canva.',
@@ -77,7 +77,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Instagram quote template',
     title: 'Gut Health Quotes & Affirmations Pack',
-    availability: 'Instant Download',
+    availability: '30 Templates', // Updated
     price: '$15.99',
     description:
       'Inspire your audience with 30 beautifully designed quote and affirmation templates for Instagram. Perfect for daily motivation and reinforcing positive gut health messages. Editable in Canva.',
@@ -87,7 +87,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'Canva template testimonial',
     title: 'Client Testimonial Showcase Templates',
-    availability: 'Instant Download',
+    availability: '10 Templates', // Updated
     price: '$18.00',
     description:
       'Showcase your client success stories with 10 professional Canva templates designed for testimonials. Build trust and credibility with these easy-to-edit designs for your Instagram feed.',
@@ -97,7 +97,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'myth debunking template',
     title: 'Gut Health Mythbusters Post Templates',
-    availability: 'Instant Download',
+    availability: '12 Templates', // Updated
     price: '$20.00',
     description:
       'Debunk common gut health myths with this set of 12 informative Canva templates. Perfect for Q&A style posts or "Fact vs. Fiction" content on your Instagram.',
@@ -107,7 +107,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'program launch Canva template',
     title: 'Wellness Program Launch Kit Templates',
-    availability: 'Instant Download',
+    availability: '25+ Templates', // Updated
     price: '$45.00',
     description:
       'Promote your new gut wellness program or coaching services with this comprehensive launch kit. Includes Canva templates for announcement posts, countdowns, early bird offers, and more.',
@@ -117,7 +117,7 @@ export const products: Product[] = [
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'seasonal eating Canva template',
     title: 'Seasonal Gut Foods Guide Templates',
-    availability: 'Instant Download',
+    availability: '20 Templates (4 Sets)', // Updated
     price: '$27.00',
     description:
       'Highlight seasonal foods beneficial for gut health with these vibrant Canva templates. Includes 4 sets (Spring, Summer, Autumn, Winter) with 5 posts each. Perfect for nutritionists and food bloggers.',

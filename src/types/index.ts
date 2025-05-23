@@ -9,9 +9,9 @@ export type Product = {
   thumbnail: string;
   dataAiHint?: string;
   title: string;
-  availability: string;
+  availability: string; // Changed from "Instant Download" to e.g., "20 Templates"
   price: string;
-  description: string; // Added description field
+  description: string;
 };
 
 export type FAQ = {
