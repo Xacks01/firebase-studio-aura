@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -10,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { subscribeToNewsletter, type NewsletterSubscribeState } from "@/app/actions";
-import { Mail } from "lucide-react";
+// Removed Mail icon import as it's not used in the new design
 
 const newsletterFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -21,7 +22,11 @@ type NewsletterFormValues = z.infer<typeof newsletterFormSchema>;
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full sm:w-auto shadow-md">
+    <Button
+      type="submit"
+      disabled={pending}
+      className="w-full sm:w-auto bg-slate-700 text-white hover:bg-slate-600 rounded-md h-12 px-6 shadow-md"
+    >
       {pending ? "Subscribing..." : "Subscribe"}
     </Button>
   );
@@ -48,36 +53,32 @@ export default function NewsletterForm() {
       });
       if (state.success) {
         form.reset();
-        formRef.current?.reset(); // Also reset the native form element
+        formRef.current?.reset();
       }
     }
   }, [state, toast, form]);
 
-
-  // This client-side validation handler is for immediate feedback.
-  // The server action will also validate.
   const clientSubmit = (data: NewsletterFormValues) => {
      const formData = new FormData();
      formData.append('email', data.email);
      formAction(formData);
   };
 
-
   return (
     <form
       ref={formRef}
-      action={formAction} // This enables progressive enhancement
-      onSubmit={form.handleSubmit(clientSubmit)} // This is for client-side validation and smoother UX
-      className="mt-6 space-y-4"
+      action={formAction}
+      onSubmit={form.handleSubmit(clientSubmit)}
+      className="w-full" // Ensuring form takes full width of its container
     >
-      <div className="flex flex-col sm:flex-row gap-3 items-start">
+      <div className="flex flex-col sm:flex-row gap-3 items-center">
         <div className="relative w-full">
-           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          {/* Mail icon removed from here */}
           <Input
             id="email"
             type="email"
-            placeholder="Enter your email address"
-            className="pl-10 h-12 text-base"
+            placeholder="Email" // Updated placeholder
+            className="h-12 text-base bg-white border-slate-300 rounded-md w-full placeholder:text-muted-foreground focus:border-primary" // Applied new styles
             {...form.register("email")}
             aria-label="Email for newsletter"
           />
@@ -85,10 +86,10 @@ export default function NewsletterForm() {
         <SubmitButton />
       </div>
       {form.formState.errors.email && (
-        <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>
+        <p className="text-sm text-destructive mt-2">{form.formState.errors.email.message}</p>
       )}
       {!form.formState.errors.email && state && !state.success && state.message && (
-         <p className="text-sm text-destructive">{state.message}</p>
+         <p className="text-sm text-destructive mt-2">{state.message}</p>
       )}
     </form>
   );
