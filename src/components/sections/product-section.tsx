@@ -13,10 +13,9 @@ function ProductCard({ product }: { product: Product }) {
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full">
           <Image
-            // Use a smaller placeholder for the card view if desired, or keep consistent
             src={product.thumbnail.replace('600x400', '300x200')} 
             alt={product.title}
-            data-ai-hint={product.dataAiHint || "product image"}
+            data-ai-hint={product.dataAiHint || "Canva template Instagram"}
             layout="fill"
             objectFit="cover"
           />
@@ -34,7 +33,7 @@ function ProductCard({ product }: { product: Product }) {
       <CardFooter className="p-6 pt-0">
         <Button asChild className="w-full shadow-md">
           <Link href={`/products/${product.id}`}>
-            <ShoppingBag className="mr-2 h-4 w-4" /> Buy Now
+            <ShoppingBag className="mr-2 h-4 w-4" /> View Template
           </Link>
         </Button>
       </CardFooter>
@@ -43,13 +42,13 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
-  const featuredProducts = products.slice(0, 3); // Display 4 products
+  const featuredProducts = products.slice(0, 4); 
 
   return (
     <section id="products" className="py-16 md:py-24 px-6 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Templates
+          Featured Gut Wellness Templates
         </h2>
       </div>
       <div className="bg-[#F5DAD2] rounded-[100px]">
@@ -61,13 +60,13 @@ export default function ProductSection() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-muted-foreground">No products available at the moment.</p>
+            <p className="text-center text-muted-foreground">No templates available at the moment.</p>
           )}
           {products.length > 4 && (
             <div className="text-center mt-12">
               <Button asChild size="lg" variant="outline" className="shadow-sm">
                 <Link href="/shop">
-                  View All Products <ArrowRight className="ml-2 h-5 w-5" />
+                  View All Templates <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>

@@ -9,8 +9,8 @@ import type { Product } from '@/types';
 import { ShoppingBag } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Shop All Products - Aura',
-  description: 'Explore the full collection of Aura wellness and mindfulness products.',
+  title: 'Shop All Gut Wellness Canva Templates - Aura',
+  description: 'Explore the full collection of Aura Canva templates for gut wellness Instagram posts.',
 };
 
 // Reusable ProductCard component (can be extracted to its own file if used elsewhere extensively)
@@ -21,9 +21,9 @@ function ShopProductCard({ product }: { product: Product }) {
         <Link href={`/products/${product.id}`} aria-label={`View details for ${product.title}`}>
           <div className="relative aspect-video w-full">
             <Image
-              src={product.thumbnail.replace('600x400', '400x267')} // Slightly larger for shop page cards
+              src={product.thumbnail.replace('600x400', '400x267')} 
               alt={product.title}
-              data-ai-hint={product.dataAiHint || "product"}
+              data-ai-hint={product.dataAiHint || "Canva template Instagram"}
               layout="fill"
               objectFit="cover"
               className="rounded-t-xl"
@@ -43,7 +43,7 @@ function ShopProductCard({ product }: { product: Product }) {
       <CardFooter className="p-6 pt-0 mt-auto border-t border-border/20">
         <Button asChild className="w-full shadow-md">
           <Link href={`/products/${product.id}`}>
-            <ShoppingBag className="mr-2 h-4 w-4" /> View Details
+            <ShoppingBag className="mr-2 h-4 w-4" /> View Template
           </Link>
         </Button>
       </CardFooter>
@@ -60,10 +60,10 @@ export default function ShopPage() {
       <header className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/30 text-center">
         <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
-            Our <span className="text-primary">Full Collection</span>
+            Our <span className="text-primary">Full Template Collection</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover all our thoughtfully curated products designed to bring peace, serenity, and well-being into your life.
+            Discover all our thoughtfully curated Canva templates designed to help you create beautiful and effective Instagram content for your gut wellness brand.
           </p>
         </div>
       </header>
@@ -77,7 +77,7 @@ export default function ShopPage() {
           </div>
         ) : (
           <p className="text-center text-muted-foreground text-lg">
-            No products available at the moment. Please check back soon!
+            No templates available at the moment. Please check back soon!
           </p>
         )}
       </main>
