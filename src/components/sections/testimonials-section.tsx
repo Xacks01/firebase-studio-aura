@@ -1,5 +1,7 @@
 
 "use client"
+import type { EmblaCarouselType } from 'embla-carousel-react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -7,13 +9,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  // CarouselPrevious and CarouselNext are removed
 } from "@/components/ui/carousel"
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
 import { Star } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import { Button } from '@/components/ui/button';
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
@@ -49,6 +51,34 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 }
 
 export default function TestimonialsSection() {
+  const [emblaApi, setEmblaApi] = useState<EmblaCarouselType | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback((api: EmblaCarouselType) => {
+    setSelectedIndex(api.selectedScrollSnap());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect); // Handle re-initialization
+
+    // Clean up
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
+
   return (
     <section id="testimonials" className="mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -62,29 +92,46 @@ export default function TestimonialsSection() {
       <div className="bg-[#BFD7EA] rounded-[100px]">
         <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           {testimonials.length > 0 ? (
-            <Carousel
-              opts={{
-                align: "start",
-                loop: testimonials.length > 2, 
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1 h-full">
-                      <TestimonialCard testimonial={testimonial} />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              {testimonials.length > 1 && ( 
-                <>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </>
+            <>
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: testimonials.length > 2, 
+                }}
+                className="w-full"
+                setApi={setEmblaApi} // Get the API instance
+              >
+                <CarouselContent className="-ml-4">
+                  {testimonials.map((testimonial) => (
+                    <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1 h-full">
+                        <TestimonialCard testimonial={testimonial} />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {/* CarouselPrevious and CarouselNext removed */}
+              </Carousel>
+              {scrollSnaps.length > 1 && (
+                <div className="flex justify-center gap-2 mt-6">
+                  {scrollSnaps.map((_, index) => (
+                    <Button
+                      key={index}
+                      onClick={() => scrollTo(index)}
+                      variant="outline"
+                      size="icon"
+                      className={cn(
+                        "h-2 w-2 rounded-full p-0",
+                        index === selectedIndex 
+                          ? "bg-primary border-primary/50 scale-110" 
+                          : "bg-muted/50 border-border hover:bg-muted"
+                      )}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               )}
-            </Carousel>
+            </>
           ) : (
             <p className="text-center text-muted-foreground">No testimonials available yet.</p>
           )}
@@ -93,5 +140,3 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-
-    
