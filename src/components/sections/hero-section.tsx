@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-            Elevate Your Gram: Gut Wellness Canva Templates.
+            Designs That Radiate Wellness.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
             Beautiful, ready-to-use Instagram Canva templates designed for gut wellness experts. Create scroll-stopping content that feels calm, clean, and deeply aligned — in minutes.
@@ -29,8 +29,8 @@ export default function HeroSection() {
           </div>
           <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
             <Image
-              src="https://placehold.co/1200x675.png"
-              alt="Instagram posts about gut wellness on a phone screen"
+              src="/assets/images/hero-image.png"
+              alt="Hero image showcasing Aura Canva templates for gut wellness"
               data-ai-hint="instagram templates wellness"
               layout="fill"
               objectFit="cover"

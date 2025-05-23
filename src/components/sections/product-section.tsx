@@ -42,7 +42,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
-  const featuredProducts = products.slice(0, 4); 
+  const featuredProducts = products.slice(0, 3); 
 
   return (
     <section id="products" className="py-16 md:py-24 px-6 mb-5">
