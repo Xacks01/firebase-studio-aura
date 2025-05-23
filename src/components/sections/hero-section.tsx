@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -7,25 +8,22 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="bg-[#CDE0D3] rounded-[100px] mx-5 py-16 px-6 mb-5"
+      className="bg-primary rounded-[100px] mx-5 py-4 px-[10px] mb-5"
     >
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              Discover Your <span className="text-primary">Inner Calm</span> with Aura
+              Discover Your <span className="text-primary-foreground">Inner Calm</span> with Aura
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
               Elevate your well-being with our thoughtfully curated collection of natural products, designed to bring peace and serenity to your everyday life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button asChild size="lg" className="shadow-lg">
+              <Button asChild size="lg" className="shadow-sm bg-[#3A3A3A]">
                 <Link href="#products">
-                  Explore Wellness <ArrowRight className="ml-2 h-5 w-5" />
+                  Contact Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="shadow-sm">
-                <Link href="#faq">Learn More</Link>
               </Button>
             </div>
           </div>

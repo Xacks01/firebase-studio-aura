@@ -59,7 +59,7 @@ export default function ProductPage({ params }: ProductPageProps) {
               </CardTitle>
               <p className="text-2xl font-semibold text-primary mb-3">{product.price}</p>
               <p className="text-sm text-muted-foreground">
-                Availability: <span className={product.availability === 'In Stock' ? 'text-green-600' : 'text-yellow-600'}>{product.availability}</span>
+                Availability: <span className={product.availability === 'In Stock' ? 'text-primary' : 'text-yellow-600'}>{product.availability}</span>
               </p>
             </CardHeader>
             <Separator className="mx-6 w-auto" />

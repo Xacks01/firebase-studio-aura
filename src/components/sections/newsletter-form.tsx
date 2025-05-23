@@ -25,7 +25,7 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="w-full sm:w-auto bg-slate-700 text-white hover:bg-slate-600 rounded-md h-12 px-6 shadow-md"
+      className="w-full sm:w-auto bg-[#3A3A3A] text-white hover:bg-slate-600 rounded-md h-12 px-6 shadow-md"
     >
       {pending ? "Subscribing..." : "Subscribe"}
     </Button>
@@ -78,7 +78,7 @@ export default function NewsletterForm() {
             id="email"
             type="email"
             placeholder="Email" // Updated placeholder
-            className="h-12 text-base bg-white border-slate-300 rounded-md w-full placeholder:text-muted-foreground focus:border-primary" // Applied new styles
+            className="h-12 text-base bg-[#CAB7E2] border-[#3A3A3A] rounded-md w-full placeholder:text-muted-foreground focus:border-[#3A3A3A]" // Applied new styles
             {...form.register("email")}
             aria-label="Email for newsletter"
           />
