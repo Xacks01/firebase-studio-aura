@@ -13,7 +13,7 @@ export default {
       fontFamily: {
         sans: ['var(--font-dm-sans)'],
         mono: ['var(--font-geist-mono)'],
-        serif: ['var(--font-dm-serif-display)'],
+        serif: ['New York', 'Times New Roman', 'serif'], // Changed to New York with fallbacks
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -49,11 +49,8 @@ export default function ProductSection() {
     <section id="products" className="py-16 md:py-24 px-6 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Our Signature Products
+          Templates
         </h2>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-          Handpicked selections to enhance your journey towards balance and well-being.
-        </p>
       </div>
       <div className="bg-[#F5DAD2] rounded-[100px]">
         <div className="container mx-auto max-w-screen-xl px-6 sm:px-6 lg:px-8 py-12 md:py-16">

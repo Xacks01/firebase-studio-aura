@@ -14,10 +14,10 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              Discover Your <span className="text-primary-foreground">Inner Calm</span> with Aura
+            Designs That Radiate Wellness.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
-              Elevate your well-being with our thoughtfully curated collection of natural products, designed to bring peace and serenity to your everyday life.
+            Beautiful, ready-to-use Instagram Canva templates made for wellness brands. Create scroll-stopping content that feels calm, clean, and deeply aligned — in minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="shadow-sm bg-[#3A3A3A] text-white">
