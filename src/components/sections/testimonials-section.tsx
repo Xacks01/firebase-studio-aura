@@ -34,12 +34,12 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-background">
+    <section id="testimonials" className="py-16 md:py-24 bg-background mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Voices of Our Community
         </h2>
-        <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
           Hear what our customers are saying about their Aura experience.
         </p>
         {testimonials.length > 0 ? (

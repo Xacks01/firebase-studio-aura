@@ -9,7 +9,7 @@ import { ShoppingBag, ArrowRight } from 'lucide-react';
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px]">
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full">
           <Image
@@ -46,32 +46,36 @@ export default function ProductSection() {
   const featuredProducts = products.slice(0, 4);
 
   return (
-    <section id="products" className="py-16 md:py-24 bg-background">
+    <section id="products" className="py-16 md:py-24 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Our Signature Products
         </h2>
-        <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
           Handpicked selections to enhance your journey towards balance and well-being.
         </p>
-        {featuredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-muted-foreground">No products available at the moment.</p>
-        )}
-        {products.length > 4 && (
-          <div className="text-center mt-12">
-            <Button asChild size="lg" variant="outline" className="shadow-sm">
-              <Link href="/shop">
-                View All Products <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        )}
+      </div>
+      <div className="bg-[#F5DAD2] rounded-[100px]">
+        <div className="container mx-auto max-w-screen-xl px-16 sm:px-6 lg:px-8 py-12 md:py-16">
+          {featuredProducts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-muted-foreground">No products available at the moment.</p>
+          )}
+          {products.length > 4 && (
+            <div className="text-center mt-12">
+              <Button asChild size="lg" variant="outline" className="shadow-sm">
+                <Link href="/shop">
+                  View All Products <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

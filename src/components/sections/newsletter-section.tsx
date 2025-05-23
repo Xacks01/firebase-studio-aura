@@ -2,15 +2,17 @@ import NewsletterForm from "./newsletter-form";
 
 export default function NewsletterSection() {
   return (
-    <section id="newsletter" className="py-16 md:py-24 bg-primary/10">
-      <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8 text-center">
+    <section id="newsletter" className="py-16 md:py-24 bg-primary/10 mb-5">
+      <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Join Our Aura Community
         </h2>
-        <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-8 max-w-xl">
           Subscribe to our newsletter for exclusive updates, wellness tips, and special offers delivered straight to your inbox.
         </p>
-        <NewsletterForm />
+        <div className="text-left"> {/* Ensures the form itself is not centered by its parent's text-center if that was the case */}
+          <NewsletterForm />
+        </div>
       </div>
     </section>
   );
