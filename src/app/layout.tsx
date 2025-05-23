@@ -1,14 +1,15 @@
 
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, DM_Serif_Display } from 'next/font/google';
+import { DM_Sans, Geist_Mono, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const dmSans = DM_Sans({
+  variable: '--font-dm-sans',
   subsets: ['latin'],
+  weight: ['400', '500', '700'], // Include weights you need
 });
 
 const geistMono = Geist_Mono({
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: '--font-dm-serif-display',
-  weight: ['400'], // DM Serif Display typically comes in 400 weight
+  weight: ['400'],
   subsets: ['latin'],
 });
 
@@ -34,9 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${dmSerifDisplay.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${dmSans.variable} ${geistMono.variable} ${dmSerifDisplay.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        {/* Removed px-4 from main to allow sections to control their full-width backgrounds */}
         <main className="flex-grow pt-5 flex flex-col gap-8">
           {children}
         </main>

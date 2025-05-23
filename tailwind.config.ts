@@ -11,9 +11,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
+        sans: ['var(--font-dm-sans)'], // Changed from --font-geist-sans
         mono: ['var(--font-geist-mono)'],
-        serif: ['var(--font-dm-serif-display)'], // Using the CSS variable for DM Serif Display
+        serif: ['var(--font-dm-serif-display)'],
       },
       colors: {
         background: 'hsl(var(--background))',
