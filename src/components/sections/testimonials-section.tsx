@@ -13,6 +13,7 @@ import {
 import { testimonials } from '@/lib/data';
 import type { Testimonial } from '@/types';
 import { Star } from 'lucide-react';
+import { cn } from "@/lib/utils"; // Added import for cn
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
