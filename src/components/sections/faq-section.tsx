@@ -11,7 +11,7 @@ export default function FaqSection() {
   return (
     // Apply background and vertical padding to the outer section
     // This section's background will now be full-width
-    <section id="faq" className="py-16 md:py-24 bg-secondary/30">
+    <section id="faq" className="py-16 md:py-24 bg-secondary/50">
       {/* Container to constrain the content within the page layout */}
       <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">

@@ -12,6 +12,7 @@ export type Product = {
   availability: string; // Changed from "Instant Download" to e.g., "20 Templates"
   price: string;
   description: string;
+  gumroadUrl?: string; // Added for Gumroad integration
 };
 
 export type FAQ = {
@@ -27,21 +28,19 @@ export type Testimonial = {
   text: string;
   author: string;
   role: string;
-  rating: number; // Added rating field
+  rating: number; 
 };
 
-export type BlogPost = {
+export type Article = {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
+  content: string; // This will store the HTML content
   author: string;
   authorAvatar?: string;
   authorAvatarHint?: string;
-  date: string; // Keep as string for simplicity, can be Date object if needed
-  views: number;
-  likes: number;
+  date: string; 
   imageUrl: string;
   imageAiHint: string;
   tags?: string[];

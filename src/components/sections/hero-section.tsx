@@ -16,7 +16,7 @@ export default function HeroSection() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
             Designs That Radiate Wellness.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
+            <p className="text-lg md:text-xl text-[#3A3A3A] mb-8 max-w-xl mx-auto md:mx-0">
             Beautiful, ready-to-use Instagram Canva templates designed for gut wellness experts. Create scroll-stopping content that feels calm, clean, and deeply aligned — in minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
