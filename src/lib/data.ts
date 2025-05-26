@@ -146,6 +146,61 @@ export const products: Product[] = [
     gumroadUrl: '#',
     category: "Gut Wellness",
   },
+  {
+    id: '13',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'journal prompts mental health',
+    title: 'Daily Calm Journal Prompts',
+    availability: '30 Templates',
+    price: '$17.00',
+    description: 'A beautiful set of 30 Canva templates featuring daily journal prompts to foster calm and mindfulness. Perfect for mental wellness coaches.',
+    gumroadUrl: '#',
+    category: "Mental Wellness",
+  },
+  {
+    id: '14',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'mindfulness exercises wellness',
+    title: 'Mindfulness Exercise Cards',
+    availability: '20 Templates',
+    price: '$15.00',
+    description: '20 elegantly designed Canva templates showcasing simple mindfulness exercises. Help your audience find peace and presence.',
+    gumroadUrl: '#',
+    category: "Mental Wellness",
+  },
+  {
+    id: '15',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'workout tracker fitness',
+    title: 'Workout Challenge Tracker',
+    availability: '15 Templates',
+    price: '$19.00',
+    description: 'Motivate your fitness clients with 15 Canva templates for tracking workout challenges and progress. Stylish and easy to use.',
+    gumroadUrl: '#',
+    category: "Fitness",
+  },
+  {
+    id: '16',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'habits planner fitness',
+    title: 'Healthy Habits Planner Pages',
+    availability: '25 Templates',
+    price: '$22.00',
+    description: 'A collection of 25 Canva templates for creating printable or digital healthy habits planners. Ideal for fitness and wellness coaches.',
+    gumroadUrl: '#',
+    category: "Fitness",
+  },
+  {
+    id: '17',
+    thumbnail: 'https://placehold.co/600x400.png',
+    dataAiHint: 'self care checklist wellness',
+    title: 'Self-Care Routine Checklist Templates',
+    availability: '10 Templates',
+    price: '$12.00',
+    description: '10 beautiful Canva checklist templates to help your audience build and maintain self-care routines. Great for general wellness.',
+    gumroadUrl: '#',
+    category: "Others",
+  }
 ];
 
 export const faqs: FAQ[] = [
@@ -294,3 +349,5 @@ export const getAllArticles = (): Article[] => {
 export const getArticleBySlug = (slug: string): Article | undefined => {
   return articlesData.find((post) => post.slug === slug);
 };
+
+    
