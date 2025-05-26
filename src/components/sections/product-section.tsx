@@ -20,7 +20,7 @@ function ProductCard({ product }: { product: Product }) {
          <Link href={`/products/${product.id}`} aria-label={`View details for ${product.title}`}>
             <div className="relative aspect-video w-full">
               <Image
-                src={product.thumbnail} // Ensure this uses the dynamic product thumbnail
+                src={product.thumbnail}
                 alt={product.title}
                 data-ai-hint={product.dataAiHint || "Canva template Instagram"}
                 layout="fill"
@@ -66,7 +66,7 @@ export default function ProductSection() {
   };
 
   return (
-    <section id="products" className="py-12 md:py-16 mb-5">
+    <section id="products" className="mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Templates
@@ -75,7 +75,7 @@ export default function ProductSection() {
           Explore our range of professionally designed Canva templates. Select a category to find the perfect fit for your brand.
         </p>
 
-        <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-10">
+        <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-[10px] md:mb-10">
           <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2 bg-primary/10 p-1 rounded-lg">
             {CATEGORIES.map(category => (
               <TabsTrigger
@@ -109,13 +109,7 @@ export default function ProductSection() {
               </Button>
             </div>
           )}
-           <div className="text-center mt-8">
-              <Button asChild size="lg" variant="link" className="text-primary hover:text-primary/80 font-semibold">
-                <Link href="/shop">
-                  Browse Full Collection <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
+          {/* "Browse Full Collection" button removed from here */}
         </div>
       </div>
     </section>
