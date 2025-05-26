@@ -1,5 +1,5 @@
 
-import type { Product, FAQ, Testimonial, Article } from '@/types';
+import type { Product, FAQ, Testimonial, Article, ProductCategory } from '@/types';
 
 export const products: Product[] = [
   {
@@ -11,7 +11,8 @@ export const products: Product[] = [
     price: '$29.99',
     description:
       'Kickstart your gut wellness content with 20 professionally designed Canva templates for Instagram. Includes posts on probiotics, fiber, hydration, and mindful eating. Fully editable to match your brand.',
-    gumroadUrl: '#', // Placeholder
+    gumroadUrl: '#',
+    category: "Gut Wellness",
   },
   {
     id: '2',
@@ -22,95 +23,104 @@ export const products: Product[] = [
     price: '$19.50',
     description:
       'Engage your audience with 15 interactive Instagram Story Canva templates focused on digestive health tips, Q&A, and daily reminders. Easy to customize.',
-    gumroadUrl: '#', // Placeholder
+    gumroadUrl: '#',
+    category: "Gut Wellness",
   },
   {
     id: '3',
     thumbnail: 'https://placehold.co/600x400.png',
     dataAiHint: 'recipe Canva template',
-    title: 'Gut-Friendly Recipe Card Templates',
+    title: 'Mindful Eating Recipe Cards',
     availability: '10 Templates',
     price: '$22.00',
     description:
-      'Share your delicious gut-healthy recipes in style! This pack includes 10 beautifully designed Canva templates for Instagram posts, perfect for showcasing ingredients and instructions.',
-    gumroadUrl: '#', // Placeholder
+      'Share your delicious recipes in style! This pack includes 10 beautifully designed Canva templates for Instagram posts, perfect for showcasing ingredients and instructions for mindful meals.',
+    gumroadUrl: '#',
+    category: "Mental Wellness",
   },
   {
     id: '4',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'Canva template infographic',
-    title: 'Microbiome Facts Infographic Pack',
+    dataAiHint: 'Canva template infographic mental health',
+    title: 'Stress Relief Infographic Pack',
     availability: '12 Templates',
     price: '$25.00',
     description:
-      'Educate your followers with 12 eye-catching infographic Canva templates about the microbiome, gut-brain axis, and fermented foods. Simplify complex topics with these customizable designs.',
-    gumroadUrl: '#', // Placeholder
+      'Educate your followers with 12 eye-catching infographic Canva templates about stress management, mindfulness, and mental clarity. Simplify complex topics with these customizable designs.',
+    gumroadUrl: '#',
+    category: "Mental Wellness",
   },
    {
     id: '5',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'wellness challenge template',
+    dataAiHint: 'wellness challenge template gut',
     title: '7-Day Gut Reset Challenge Templates',
     availability: '30+ Templates',
     price: '$39.99',
     description:
       'Launch a 7-day gut reset challenge with this comprehensive Canva template bundle. Includes daily posts, story prompts, and cover images to guide your audience through a wellness journey.',
     gumroadUrl: '#',
+    category: "Gut Wellness",
   },
   {
     id: '6',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'Canva template bundle',
-    title: 'Ultimate Gut Wellness Canva Bundle',
-    availability: '100+ Templates',
-    price: '$97.00',
+    dataAiHint: 'Canva template bundle fitness',
+    title: 'Fitness Motivation Canva Bundle',
+    availability: '50+ Templates',
+    price: '$67.00',
     description:
-      'Get all our top gut wellness templates in one bundle! Over 100+ Canva designs including posts, stories, carousels, and infographics. The ultimate toolkit for your Instagram content strategy.',
+      'Get all our top fitness motivation templates in one bundle! Over 50+ Canva designs including posts, stories, workout planners, and infographics for fitness coaches.',
     gumroadUrl: '#',
+    category: "Fitness",
   },
   {
     id: '7',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'mindful eating Canva template',
-    title: 'Mindful Eating Tips Carousel Templates',
+    dataAiHint: 'mindful eating Canva template gut',
+    title: 'Mindful Eating & Gut Health Carousel',
     availability: '8 Templates',
     price: '$24.50',
     description:
-      'Encourage mindful eating habits with 8 engaging carousel post Canva templates. Each template is designed to share valuable tips and insights in a digestible format. Fully customizable.',
+      'Encourage mindful eating habits for better gut health with 8 engaging carousel post Canva templates. Each template is designed to share valuable tips and insights. Fully customizable.',
     gumroadUrl: '#',
+    category: "Gut Wellness",
   },
   {
     id: '8',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'Instagram quote template',
-    title: 'Gut Health Quotes & Affirmations Pack',
+    dataAiHint: 'Instagram quote template wellness',
+    title: 'General Wellness Quotes Pack',
     availability: '30 Templates',
     price: '$15.99',
     description:
-      'Inspire your audience with 30 beautifully designed quote and affirmation Canva templates for Instagram. Perfect for daily motivation and reinforcing positive gut health messages. Editable in Canva.',
+      'Inspire your audience with 30 beautifully designed quote and affirmation Canva templates for Instagram, suitable for general wellness and positive vibes. Editable in Canva.',
     gumroadUrl: '#',
+    category: "Others",
   },
   {
     id: '9',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'Canva template testimonial',
-    title: 'Client Testimonial Showcase Templates',
+    dataAiHint: 'Canva template testimonial fitness',
+    title: 'Fitness Client Testimonial Templates',
     availability: '10 Templates',
     price: '$18.00',
     description:
-      'Showcase your client success stories with 10 professional Canva templates designed for testimonials. Build trust and credibility with these easy-to-edit designs for your Instagram feed.',
+      'Showcase your fitness client success stories with 10 professional Canva templates designed for testimonials. Build trust and credibility with these easy-to-edit designs.',
     gumroadUrl: '#',
+    category: "Fitness",
   },
   {
     id: '10',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'myth debunking template',
-    title: 'Gut Health Mythbusters Post Templates',
+    dataAiHint: 'myth debunking template other',
+    title: 'Holistic Health Mythbusters Templates',
     availability: '12 Templates',
     price: '$20.00',
     description:
-      'Debunk common gut health myths with this set of 12 informative Canva templates. Perfect for Q&A style posts or "Fact vs. Fiction" content on your Instagram.',
+      'Debunk common holistic health myths with this set of 12 informative Canva templates. Perfect for Q&A style posts or "Fact vs. Fiction" content on your Instagram.',
     gumroadUrl: '#',
+    category: "Others",
   },
   {
     id: '11',
@@ -120,19 +130,21 @@ export const products: Product[] = [
     availability: '25+ Templates',
     price: '$45.00',
     description:
-      'Promote your new gut wellness program or coaching services with this comprehensive Canva launch kit. Includes templates for announcement posts, countdowns, early bird offers, and more.',
+      'Promote your new wellness program or coaching services with this comprehensive Canva launch kit. Includes templates for announcement posts, countdowns, early bird offers, and more.',
     gumroadUrl: '#',
+    category: "Others",
   },
   {
     id: '12',
     thumbnail: 'https://placehold.co/600x400.png',
-    dataAiHint: 'seasonal eating Canva template',
+    dataAiHint: 'seasonal eating Canva template gut',
     title: 'Seasonal Gut Foods Guide Templates',
     availability: '20 Templates (4 Sets)',
     price: '$27.00',
     description:
       'Highlight seasonal foods beneficial for gut health with these vibrant Canva templates. Includes 4 sets (Spring, Summer, Autumn, Winter) with 5 posts each. Perfect for nutritionists.',
     gumroadUrl: '#',
+    category: "Gut Wellness",
   },
 ];
 
@@ -213,7 +225,7 @@ export const testimonials: Testimonial[] = [
     author: 'David B.',
     role: 'Holistic Health Consultant',
     rating: 4,
-  }
+  },
 ];
 
 export const articlesData: Article[] = [
@@ -276,7 +288,7 @@ export const getAllProducts = (): Product[] => {
 // Helper functions for articles
 export const getAllArticles = (): Article[] => {
   // Sort by most recent date
-  return [...articlesData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); 
+  return [...articlesData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

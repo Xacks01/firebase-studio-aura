@@ -4,15 +4,18 @@ export type NavItem = {
   href: string;
 };
 
+export type ProductCategory = "Gut Wellness" | "Mental Wellness" | "Fitness" | "Others";
+
 export type Product = {
   id: string;
   thumbnail: string;
   dataAiHint?: string;
   title: string;
-  availability: string; // Changed from "Instant Download" to e.g., "20 Templates"
+  availability: string; // e.g., "20 Templates"
   price: string;
   description: string;
-  gumroadUrl?: string; // Added for Gumroad integration
+  gumroadUrl?: string;
+  category: ProductCategory; // Added category
 };
 
 export type FAQ = {
@@ -28,7 +31,7 @@ export type Testimonial = {
   text: string;
   author: string;
   role: string;
-  rating: number; 
+  rating: number;
 };
 
 export type Article = {
@@ -40,7 +43,7 @@ export type Article = {
   author: string;
   authorAvatar?: string;
   authorAvatarHint?: string;
-  date: string; 
+  date: string;
   imageUrl: string;
   imageAiHint: string;
   tags?: string[];
