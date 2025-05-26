@@ -62,7 +62,7 @@ export default function ProductSection() {
   };
 
   const handleViewMore = () => {
-    setVisibleCount(5);
+    setVisibleCount(prevCount => Math.min(prevCount + 2, 5)); // Show up to 5 products
   };
 
   return (
@@ -81,7 +81,7 @@ export default function ProductSection() {
               <TabsTrigger
                 key={category}
                 value={category}
-                className="py-2.5 text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md"
+                className="px-3 py-2 text-xs sm:py-2.5 sm:text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md"
               >
                 {category}
               </TabsTrigger>
@@ -109,7 +109,6 @@ export default function ProductSection() {
               </Button>
             </div>
           )}
-          {/* "Browse Full Collection" button removed from here */}
         </div>
       </div>
     </section>
