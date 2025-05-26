@@ -76,7 +76,7 @@ export default function ProductSection() {
         </p>
 
         <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-[10px] md:mb-10">
-          <TabsList className="flex flex-row items-center overflow-x-auto whitespace-nowrap p-1 rounded-lg bg-primary/10">
+          <TabsList className="flex flex-row items-center whitespace-nowrap p-1 rounded-lg bg-primary/10">
             {CATEGORIES.map(category => (
               <TabsTrigger
                 key={category}
@@ -114,4 +114,3 @@ export default function ProductSection() {
     </section>
   );
 }
-
