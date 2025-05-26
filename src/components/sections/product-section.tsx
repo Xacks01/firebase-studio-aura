@@ -76,12 +76,12 @@ export default function ProductSection() {
         </p>
 
         <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-[10px] md:mb-10">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-1 bg-primary/10 p-1 rounded-lg">
+          <TabsList className="flex flex-row items-center overflow-x-auto whitespace-nowrap p-1 rounded-lg bg-primary/10">
             {CATEGORIES.map(category => (
               <TabsTrigger
                 key={category}
                 value={category}
-                className="px-2 py-2 text-xs sm:px-3 sm:py-2.5 sm:text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md"
+                className="px-2 py-2 text-xs sm:px-3 sm:py-2.5 sm:text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md flex-shrink-0 mx-0.5"
               >
                 {category}
               </TabsTrigger>
@@ -114,3 +114,4 @@ export default function ProductSection() {
     </section>
   );
 }
+
