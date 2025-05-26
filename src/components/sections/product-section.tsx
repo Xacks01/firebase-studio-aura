@@ -20,7 +20,7 @@ function ProductCard({ product }: { product: Product }) {
          <Link href={`/products/${product.id}`} aria-label={`View details for ${product.title}`}>
             <div className="relative aspect-video w-full">
               <Image
-                src={product.thumbnail.replace('600x400', '300x200')}
+                src={product.thumbnail} // Ensure this uses the dynamic product thumbnail
                 alt={product.title}
                 data-ai-hint={product.dataAiHint || "Canva template Instagram"}
                 layout="fill"
@@ -66,7 +66,7 @@ export default function ProductSection() {
   };
 
   return (
-    <section id="products" className="mb-5">
+    <section id="products" className="py-12 md:py-16 mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Templates
@@ -75,36 +75,42 @@ export default function ProductSection() {
           Explore our range of professionally designed Canva templates. Select a category to find the perfect fit for your brand.
         </p>
 
-        <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-8">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
+        <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-10">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2 bg-primary/10 p-1 rounded-lg">
             {CATEGORIES.map(category => (
-              <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
+              <TabsTrigger
+                key={category}
+                value={category}
+                className="py-2.5 text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md"
+              >
+                {category}
+              </TabsTrigger>
             ))}
           </TabsList>
         </Tabs>
       </div>
 
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#F5DAD2] rounded-[100px] px-6 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="bg-[#F5DAD2] rounded-[100px] px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           {displayedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {displayedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : (
-            <p className="text-center text-muted-foreground">No templates available in this category yet.</p>
+            <p className="text-center text-muted-foreground py-10">No templates available in this category yet.</p>
           )}
 
           {productsForCategory.length > visibleCount && visibleCount < 5 && (
             <div className="text-center mt-12">
-              <Button onClick={handleViewMore} size="lg" variant="outline" className="shadow-sm">
+              <Button onClick={handleViewMore} size="lg" variant="default" className="shadow-md bg-primary text-primary-foreground hover:bg-primary/90">
                 View More <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           )}
            <div className="text-center mt-8">
-              <Button asChild size="lg" variant="link" className="text-primary hover:text-primary/80">
+              <Button asChild size="lg" variant="link" className="text-primary hover:text-primary/80 font-semibold">
                 <Link href="/shop">
                   Browse Full Collection <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
