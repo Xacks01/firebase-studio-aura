@@ -1,21 +1,15 @@
 
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { products as allProducts } from '@/lib/data';
-import type { Product, ProductCategory } from '@/types';
-import { ShoppingBag, ArrowRight } from 'lucide-react';
-
-const CATEGORIES: ProductCategory[] = ["Gut Wellness", "Mental Wellness", "Fitness", "Others"];
+import type { Product } from '@/types';
+import { ShoppingBag } from 'lucide-react';
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] relative bg-card">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-[30px] relative bg-card h-full">
       <CardHeader className="p-0">
          <Link href={`/products/${product.id}`} aria-label={`View details for ${product.title}`}>
             <div className="relative aspect-video w-full">
@@ -38,7 +32,7 @@ function ProductCard({ product }: { product: Product }) {
         <p className="text-sm text-muted-foreground mb-1">{product.availability}</p>
         <p className="text-lg font-bold text-[#334038]">{product.price}</p>
       </CardContent>
-      <CardFooter className="p-6 pt-0">
+      <CardFooter className="p-6 pt-0 mt-auto">
         <Button asChild className="w-full shadow-md">
           <Link href={`/products/${product.id}`}>
             <ShoppingBag className="mr-2 h-4 w-4" /> View Template
@@ -50,20 +44,8 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
-  const [selectedCategory, setSelectedCategory] = useState<ProductCategory>(CATEGORIES[0]);
-  const [visibleCount, setVisibleCount] = useState<number>(3);
-
-  const productsForCategory = allProducts.filter(p => p.category === selectedCategory);
-  const displayedProducts = productsForCategory.slice(0, visibleCount);
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category as ProductCategory);
-    setVisibleCount(3); // Reset to 3 when category changes
-  };
-
-  const handleViewMore = () => {
-    setVisibleCount(prevCount => Math.min(prevCount + 2, 5)); // Show up to 5 products
-  };
+  // Display the first 3 products
+  const displayedProducts = allProducts.slice(0, 3);
 
   return (
     <section id="products" className="mb-5">
@@ -72,22 +54,8 @@ export default function ProductSection() {
           Templates
         </h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-          Explore our range of professionally designed Canva templates. Select a category to find the perfect fit for your brand.
+          Explore our range of professionally designed Canva templates. Find the perfect fit for your brand.
         </p>
-
-        <Tabs value={selectedCategory} onValueChange={handleCategoryChange} className="mb-[10px] md:mb-10">
-          <TabsList className="flex flex-row items-center whitespace-nowrap p-1 rounded-lg bg-primary/10">
-            {CATEGORIES.map(category => (
-              <TabsTrigger
-                key={category}
-                value={category}
-                className="px-2 py-2 text-xs sm:px-3 sm:py-2.5 sm:text-sm font-medium text-foreground/80 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md flex-shrink-0 mx-0.5"
-              >
-                {category}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
       </div>
 
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -99,16 +67,9 @@ export default function ProductSection() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-muted-foreground py-10">No templates available in this category yet.</p>
+            <p className="text-center text-muted-foreground py-10">No templates available yet.</p>
           )}
-
-          {productsForCategory.length > visibleCount && visibleCount < 5 && (
-            <div className="text-center mt-12">
-              <Button onClick={handleViewMore} size="lg" variant="default" className="shadow-md bg-primary text-primary-foreground hover:bg-primary/90">
-                View More <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          )}
+          {/* "View More" button and category tabs removed */}
         </div>
       </div>
     </section>
