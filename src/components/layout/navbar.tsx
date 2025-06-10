@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'; // Added SheetTitle
 import { NAV_LINKS } from '@/lib/constants';
 import type { NavItem } from '@/types';
 
@@ -42,6 +42,8 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+              {/* Added SheetTitle for accessibility */}
+              <SheetTitle className="sr-only">Menu</SheetTitle> 
               <nav className="flex flex-col space-y-6 pt-10">
                 {NAV_LINKS.map((item: NavItem) => (
                   <Link
