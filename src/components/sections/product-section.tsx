@@ -1,11 +1,17 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { products as allProducts } from '@/lib/data';
-import type { Product } from '@/types';
+import type { Product, ProductCategory } from '@/types';
 import { ShoppingBag } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React, { useState, useMemo } from 'react';
+
+const CATEGORIES: ProductCategory[] = ["Gut Wellness", "Mental Wellness", "Fitness", "Others"];
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -44,8 +50,15 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductSection() {
-  // Display the first 3 products
-  const displayedProducts = allProducts.slice(0, 3);
+  const [selectedCategory, setSelectedCategory] = useState<ProductCategory>(CATEGORIES[0]);
+  
+  const productsForCategory = useMemo(() => {
+    return allProducts.filter(product => product.category === selectedCategory);
+  }, [selectedCategory]);
+
+  const displayedProducts = useMemo(() => {
+    return productsForCategory.slice(0, 3);
+  }, [productsForCategory]);
 
   return (
     <section id="products" className="mb-5">
@@ -56,6 +69,8 @@ export default function ProductSection() {
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
           Explore our range of professionally designed Canva templates. Find the perfect fit for your brand.
         </p>
+
+        {/* Category Selector Tabs Removed as per user request */}
       </div>
 
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -67,9 +82,9 @@ export default function ProductSection() {
               ))}
             </div>
           ) : (
-            <p className="text-center text-muted-foreground py-10">No templates available yet.</p>
+            <p className="text-center text-muted-foreground py-10">No templates available in this category yet.</p>
           )}
-          {/* "View More" button and category tabs removed */}
+          {/* "View More" button removed as per user request */}
         </div>
       </div>
     </section>
