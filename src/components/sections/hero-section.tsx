@@ -8,9 +8,10 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="bg-primary rounded-[100px] mx-5 py-16 px-[10px] mb-5"
+      className="mb-5" // Removed background, rounding, mx, and specific padding from section
     >
-      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      {/* The container itself now becomes the styled, rounded box */}
+      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg-primary rounded-[100px] py-16">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">

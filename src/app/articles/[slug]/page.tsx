@@ -2,13 +2,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, CalendarDays, UserCircle } from 'lucide-react'; // Removed Eye, MessageSquare
+import { ArrowLeft, CalendarDays, UserCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Badge } from '@/components/ui/badge';
-import { getArticleBySlug, getAllArticles } from '@/lib/data'; // Renamed functions
+// Badge import removed as tags are no longer displayed here
+import { getArticleBySlug, getAllArticles } from '@/lib/data';
 import type { Metadata, ResolvingMetadata } from 'next';
-import type { Article } from '@/types'; // Renamed type
+import type { Article } from '@/types';
 import NewsletterSection from '@/components/sections/newsletter-section';
 
 type Props = {
@@ -19,17 +19,17 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = getArticleBySlug(params.slug); // Renamed function
+  const post = getArticleBySlug(params.slug);
 
   if (!post) {
     return {
-      title: 'Article Not Found', // Updated title
+      title: 'Article Not Found',
       description: 'The article you are looking for does not exist.',
     };
   }
 
   return {
-    title: `${post.title} - Aura Articles`, // Updated title
+    title: `${post.title} - Aura Articles`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -37,7 +37,7 @@ export async function generateMetadata(
       type: 'article',
       publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
-      tags: post.tags,
+      tags: post.tags, // Metadata can still include tags for SEO if available
     },
     twitter: {
       card: 'summary_large_image',
@@ -48,14 +48,14 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  const posts = getAllArticles(); // Renamed function
+  const posts = getAllArticles();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default function ArticlePage({ params }: Props) { // Renamed from BlogPostPage
-  const post = getArticleBySlug(params.slug); // Renamed function
+export default function ArticlePage({ params }: Props) {
+  const post = getArticleBySlug(params.slug);
 
   if (!post) {
     notFound();
@@ -67,23 +67,15 @@ export default function ArticlePage({ params }: Props) { // Renamed from BlogPos
         <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6">
             <Button variant="outline" size="sm" asChild className="group">
-              <Link href="/articles"> {/* Updated link */}
+              <Link href="/articles">
                 <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 Back to All Articles
               </Link>
             </Button>
           </div>
 
-          {post.tags && post.tags.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-2 justify-center">
-              {post.tags.map(tag => (
-                <Badge key={tag} variant="default" className="text-sm font-medium bg-primary/80 text-primary-foreground hover:bg-primary">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
+          {/* Tags display removed from here */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 mt-4"> {/* Added mt-4 for spacing after removing tags */}
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center justify-center text-sm text-muted-foreground space-x-4">
@@ -95,7 +87,6 @@ export default function ArticlePage({ params }: Props) { // Renamed from BlogPos
               <CalendarDays className="mr-1.5 h-4 w-4" />
               <span>{post.date}</span>
             </div>
-            {/* Views and Likes removed from here */}
           </div>
         </div>
       </header>

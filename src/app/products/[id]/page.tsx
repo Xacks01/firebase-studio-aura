@@ -7,7 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Separator } from '@/components/ui/separator';
 import { getProductById } from '@/lib/data';
 import type { Product } from '@/types';
-import { ArrowLeft, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, ShoppingCart } from 'lucide-react'; // ShoppingCart icon can remain or be changed
 
 export async function generateStaticParams() {
   // In a real app, you might fetch all product IDs here
@@ -68,9 +68,12 @@ export default function ProductPage({ params }: ProductPageProps) {
               <p className="text-muted-foreground leading-relaxed">{product.description}</p>
             </CardContent>
             <CardFooter className="p-6 bg-muted/30 border-t md:rounded-br-lg">
-              <Button size="lg" className="w-full shadow-md">
-                <ShoppingCart className="mr-2 h-5 w-5" />
-                Add to Cart
+              {/* Assuming product.gumroadUrl exists and is the correct link */}
+              <Button size="lg" className="w-full shadow-md" asChild>
+                <Link href={product.gumroadUrl || "#"} target="_blank" rel="noopener noreferrer">
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Buy Now
+                </Link>
               </Button>
             </CardFooter>
           </div>
