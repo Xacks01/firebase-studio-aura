@@ -4,7 +4,7 @@ export type NavItem = {
   href: string;
 };
 
-export type ProductCategory = "Gut Wellness" | "Mental Wellness" | "Fitness" | "Others";
+export type ProductCategory = "Core Skincare" | "Beauty Rituals" | "Skin Tools & Tech" | "General Beauty";
 
 export type Product = {
   id: string;
@@ -15,7 +15,7 @@ export type Product = {
   price: string;
   description: string;
   gumroadUrl?: string;
-  category: ProductCategory; // Added category
+  category: ProductCategory; // Updated category
 };
 
 export type FAQ = {

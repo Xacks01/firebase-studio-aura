@@ -19,7 +19,7 @@ function ProductCard({ product }: { product: Product }) {
               <Image
                 src={product.thumbnail}
                 alt={product.title}
-                data-ai-hint={product.dataAiHint || "Canva template Instagram"}
+                data-ai-hint={product.dataAiHint || "Canva template skincare"}
                 layout="fill"
                 objectFit="cover"
               />
@@ -55,10 +55,10 @@ export default function ProductSection() {
     <section id="products" className="mb-5">
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Templates
+          Skincare Templates
         </h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-          Explore our range of professionally designed Canva templates. Find the perfect fit for your brand.
+          Explore our range of professionally designed Canva templates for skincare. Elevate your brand's Instagram presence.
         </p>
       </div>
 

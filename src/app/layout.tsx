@@ -15,8 +15,8 @@ const dmSans = DM_Sans({
 // DM_Serif_Display was intentionally removed to use system "New York" font for headers
 
 export const metadata: Metadata = {
-  title: 'Aura | Gut Wellness Canva Templates for Instagram',
-  description: 'Professionally designed Canva templates for gut wellness coaches, nutritionists, and brands. Create stunning Instagram content in minutes.',
+  title: 'Aura | Skincare Canva Templates for Instagram',
+  description: 'Professionally designed Canva templates for skincare brands, estheticians, and beauty influencers. Create stunning Instagram content in minutes.',
 };
 
 export default function RootLayout({

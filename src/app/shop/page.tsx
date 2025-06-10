@@ -9,8 +9,8 @@ import type { Product } from '@/types';
 import { ShoppingBag } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Shop All Gut Wellness Canva Templates - Aura',
-  description: 'Explore the full collection of Aura Canva templates for gut wellness Instagram posts.',
+  title: 'Shop All Skincare Canva Templates - Aura',
+  description: 'Explore the full collection of Aura Canva templates for skincare Instagram posts.',
 };
 
 // Reusable ProductCard component (can be extracted to its own file if used elsewhere extensively)
@@ -23,7 +23,7 @@ function ShopProductCard({ product }: { product: Product }) {
             <Image
               src={product.thumbnail.replace('600x400', '400x267')} 
               alt={product.title}
-              data-ai-hint={product.dataAiHint || "Canva template Instagram"}
+              data-ai-hint={product.dataAiHint || "Canva template skincare"}
               layout="fill"
               objectFit="cover"
               className="rounded-t-xl"
@@ -60,10 +60,10 @@ export default function ShopPage() {
       <header className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/30 text-center">
         <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
-            Our <span className="text-primary">Full Template Collection</span>
+            Our <span className="text-primary">Full Skincare Template Collection</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover all our thoughtfully curated Canva templates designed to help you create beautiful and effective Instagram content for your gut wellness brand.
+            Discover all our thoughtfully curated Canva templates designed to help you create beautiful and effective Instagram content for your skincare brand.
           </p>
         </div>
       </header>

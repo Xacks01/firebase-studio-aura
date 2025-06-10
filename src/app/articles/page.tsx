@@ -10,8 +10,8 @@ import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 
 // export const metadata: Metadata = { // Metadata generation needs to be handled differently for client components or moved
-//   title: 'Aura Articles - Wellness & Mindfulness',
-//   description: 'Explore articles on wellness, mindfulness, meditation, and natural living from Aura.',
+//   title: 'Aura Articles - Skincare & Beauty',
+//   description: 'Explore articles on skincare routines, beauty tips, ingredient spotlights, and achieving radiant skin from Aura.',
 // };
 // For now, we'll rely on the layout.tsx for general metadata for /articles path. Specific metadata can be added via Head component if needed.
 
@@ -36,10 +36,10 @@ export default function ArticlesPage() {
       <header className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/30 text-center">
         <div className="container mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
-            The Aura <span className="text-primary">Journal</span>
+            The Aura <span className="text-primary">Beauty Journal</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Insights and inspiration for your journey to well-being. Discover tips on mindfulness, natural living, and finding your inner calm.
+            Insights and inspiration for your journey to radiant skin. Discover tips on skincare routines, ingredient deep-dives, and achieving your best glow.
           </p>
         </div>
       </header>

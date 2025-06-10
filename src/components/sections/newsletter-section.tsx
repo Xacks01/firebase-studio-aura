@@ -8,7 +8,7 @@ export default function NewsletterSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#3A3A3A]">
-              Subscribe to<br />Our Newsletter
+              Get Skin-spired!<br />Join Our Newsletter
             </h2>
             <p className="text-lg text-[#3A3A3A]/90 mt-4">
               Sign up to our newsletter and receive a freebie of 5 posts templates!
