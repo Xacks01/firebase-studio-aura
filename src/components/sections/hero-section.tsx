@@ -8,10 +8,12 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="mb-5"
+      className="mb-5" // Outer section provides top/bottom margin if needed
     >
-      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-primary rounded-[100px] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8"> 
+        {/* This container constrains the width and provides standard page padding */}
+        <div className="bg-primary rounded-[100px] py-12 px-4 sm:px-6 lg:px-8 md:py-16">
+          {/* This is the colored, rounded box. py-12/md:py-16 and px applied here for internal padding */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="text-center md:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
@@ -29,6 +31,7 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
+              {/* Ensure hero-image.png is located at public/assets/images/hero-image.png */}
               <Image
                 src="/assets/images/hero-image.png" 
                 alt="Hero image showcasing Aura Canva templates for skincare"

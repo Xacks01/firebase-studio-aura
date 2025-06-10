@@ -6,7 +6,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   // Social icons data
-  // Critical: These SVGs (ig.svg, face.svg, tik.svg, pin.svg) MUST be in public/assets/images/
+  // Ensure these SVG files (ig.svg, face.svg, tik.svg, pin.svg) 
+  // are located in the public/assets/images/ directory.
   const socialLinks = [
     { href: "#", label: "Instagram", iconSrc: "/assets/images/ig.svg" },
     { href: "#", label: "Facebook", iconSrc: "/assets/images/face.svg" },

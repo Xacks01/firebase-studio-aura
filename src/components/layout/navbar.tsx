@@ -14,7 +14,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2" aria-label="Aura Landing Home">
-            {/* Critical: aura-logo.svg MUST be in public/assets/images/aura-logo.svg */}
+            {/* Ensure aura-logo.svg is located at public/assets/images/aura-logo.svg */}
             <img src="/assets/images/aura-logo.svg" alt="Aura Logo" className="h-7" />
         </Link>
 
