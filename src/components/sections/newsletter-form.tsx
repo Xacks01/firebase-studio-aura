@@ -1,8 +1,8 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useEffect, useRef, useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { subscribeToNewsletter, type NewsletterSubscribeState } from "@/app/actions";
-// Removed Mail icon import as it's not used in the new design
 
 const newsletterFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -33,7 +32,7 @@ function SubmitButton() {
 }
 
 export default function NewsletterForm() {
-  const [state, formAction] = useFormState<NewsletterSubscribeState | undefined, FormData>(subscribeToNewsletter, undefined);
+  const [state, formAction] = useActionState<NewsletterSubscribeState | undefined, FormData>(subscribeToNewsletter, undefined);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -73,7 +72,6 @@ export default function NewsletterForm() {
     >
       <div className="flex flex-col sm:flex-row gap-3 items-center">
         <div className="relative w-full">
-          {/* Mail icon removed from here */}
           <Input
             id="email"
             type="email"
